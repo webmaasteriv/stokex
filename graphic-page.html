@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Stokex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script defer src="assets/js/popper.min.js"></script>
+    <script defer src="assets/js/bootstrap.min.js"></script>
+    <script defer src="assets/js/bundle.graphic.js"></script>
+</head>
+
+<body>
+    <header class="main-header main-header__shadow">
+        <div class="container-xl conainer-lg-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="#">stokex</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.5 1.75C3.5 2.21413 3.31563 2.65925 2.98744 2.98744C2.65925 3.31563 2.21413 3.5 1.75 3.5C1.28587 3.5 0.840752 3.31563 0.512563 2.98744C0.184374 2.65925 0 2.21413 0 1.75C0 1.28587 0.184374 0.840752 0.512563 0.512563C0.840752 0.184374 1.28587 0 1.75 0C2.21413 0 2.65925 0.184374 2.98744 0.512563C3.31563 0.840752 3.5 1.28587 3.5 1.75Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M3.5 7C3.5 7.46413 3.31563 7.90925 2.98744 8.23744C2.65925 8.56563 2.21413 8.75 1.75 8.75C1.28587 8.75 0.840752 8.56563 0.512563 8.23744C0.184374 7.90925 0 7.46413 0 7C0 6.53587 0.184374 6.09075 0.512563 5.76256C0.840752 5.43437 1.28587 5.25 1.75 5.25C2.21413 5.25 2.65925 5.43437 2.98744 5.76256C3.31563 6.09075 3.5 6.53587 3.5 7Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M1.75 14C2.21413 14 2.65925 13.8156 2.98744 13.4874C3.31563 13.1592 3.5 12.7141 3.5 12.25C3.5 11.7859 3.31563 11.3408 2.98744 11.0126C2.65925 10.6844 2.21413 10.5 1.75 10.5C1.28587 10.5 0.840752 10.6844 0.512563 11.0126C0.184374 11.3408 0 11.7859 0 12.25C0 12.7141 0.184374 13.1592 0.512563 13.4874C0.840752 13.8156 1.28587 14 1.75 14Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M8.75 1.75C8.75 2.21413 8.56563 2.65925 8.23744 2.98744C7.90925 3.31563 7.46413 3.5 7 3.5C6.53587 3.5 6.09075 3.31563 5.76256 2.98744C5.43437 2.65925 5.25 2.21413 5.25 1.75C5.25 1.28587 5.43437 0.840752 5.76256 0.512563C6.09075 0.184374 6.53587 0 7 0C7.46413 0 7.90925 0.184374 8.23744 0.512563C8.56563 0.840752 8.75 1.28587 8.75 1.75Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M7 8.75C7.46413 8.75 7.90925 8.56563 8.23744 8.23744C8.56563 7.90925 8.75 7.46413 8.75 7C8.75 6.53587 8.56563 6.09075 8.23744 5.76256C7.90925 5.43437 7.46413 5.25 7 5.25C6.53587 5.25 6.09075 5.43437 5.76256 5.76256C5.43437 6.09075 5.25 6.53587 5.25 7C5.25 7.46413 5.43437 7.90925 5.76256 8.23744C6.09075 8.56563 6.53587 8.75 7 8.75Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M8.75 12.25C8.75 12.7141 8.56563 13.1592 8.23744 13.4874C7.90925 13.8156 7.46413 14 7 14C6.53587 14 6.09075 13.8156 5.76256 13.4874C5.43437 13.1592 5.25 12.7141 5.25 12.25C5.25 11.7859 5.43437 11.3408 5.76256 11.0126C6.09075 10.6844 6.53587 10.5 7 10.5C7.46413 10.5 7.90925 10.6844 8.23744 11.0126C8.56563 11.3408 8.75 11.7859 8.75 12.25Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M12.25 3.5C12.7141 3.5 13.1592 3.31563 13.4874 2.98744C13.8156 2.65925 14 2.21413 14 1.75C14 1.28587 13.8156 0.840752 13.4874 0.512563C13.1592 0.184374 12.7141 0 12.25 0C11.7859 0 11.3408 0.184374 11.0126 0.512563C10.6844 0.840752 10.5 1.28587 10.5 1.75C10.5 2.21413 10.6844 2.65925 11.0126 2.98744C11.3408 3.31563 11.7859 3.5 12.25 3.5Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M14 7C14 7.46413 13.8156 7.90925 13.4874 8.23744C13.1592 8.56563 12.7141 8.75 12.25 8.75C11.7859 8.75 11.3408 8.56563 11.0126 8.23744C10.6844 7.90925 10.5 7.46413 10.5 7C10.5 6.53587 10.6844 6.09075 11.0126 5.76256C11.3408 5.43437 11.7859 5.25 12.25 5.25C12.7141 5.25 13.1592 5.43437 13.4874 5.76256C13.8156 6.09075 14 6.53587 14 7Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M12.25 14C12.7141 14 13.1592 13.8156 13.4874 13.4874C13.8156 13.1592 14 12.7141 14 12.25C14 11.7859 13.8156 11.3408 13.4874 11.0126C13.1592 10.6844 12.7141 10.5 12.25 10.5C11.7859 10.5 11.3408 10.6844 11.0126 11.0126C10.6844 11.3408 10.5 11.7859 10.5 12.25C10.5 12.7141 10.6844 13.1592 11.0126 13.4874C11.3408 13.8156 11.7859 14 12.25 14Z"
+                                        fill="#D0D9DE" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="navbar-collapse__background">
+                            </div>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Markets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Trade</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        Information
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">About Us</a>
+                                        <a class="dropdown-item" href="#">Support Center</a>
+                                        <a class="dropdown-item" href="#">Affiliate Program</a>
+                                        <a class="dropdown-item" href="#">FAQ</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Wallets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Promo<span class="icon-currency">NEW</span></a>
+                                </li>
+                            </ul>
+                            <div class="login-block">
+                                <a class="login" href="#">Log In</a>
+                                <a class="btn stokex-button" href="#">Register</a>
+                                <div class="language-switcher">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+                                                role="button" aria-expanded="false"><span
+                                                    class="lang_icon en"></span>En</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#"><span
+                                                        class="lang_icon ru"></span>Ru</a>
+                                                <a class="dropdown-item" href="#"><span
+                                                        class="lang_icon de"></span>De</a>
+                                                <a class="dropdown-item" href="#"><span
+                                                        class="lang_icon pl"></span>Pl</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="trade-string">
+                        <div class="amount-change-select">
+                            <div>
+                                <select class="currency-select">
+                                    <option value="BTC/USDT">BTC/USDT</option>
+                                    <option value="Example 1">Example 1</option>
+                                    <option value="Example 2">Example 2</option>
+                                </select>
+                            </div>
+                            <div class="amount">
+                                <div class="green">32,400.00</div>
+                                <div>32,400.00</div>
+                            </div>
+                            <div class="info change">
+                                <div class="heading">24h Change</div>
+                                <div class="green">301.59 +0.94%</div>
+                            </div>
+                        </div>
+                        <div class="just-info">
+                            <div class="info high">
+                                <div class="heading">24h High</div>
+                                <div>32,915.00</div>
+                            </div>
+                            <div class="info low">
+                                <div class="heading">24h Low</div>
+                                <div>32,915.00</div>
+                            </div>
+                            <div class="info volume">
+                                <div class="heading">24h Volume (<span>BTC</span>)</div>
+                                <div>32,915.00</div>
+                            </div>
+                            <div class="info volume_2">
+                                <div class="heading">24h Volume (<span>USDT</span>)</div>
+                                <div>1,372,417,747.37</div>
+                            </div>
+                        </div>
+                        <div class="button ml-auto">
+                            <button type="button" class="tutorial-button">
+                                <i>
+                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.05 8.24199C15.05 12.3354 11.7855 15.6402 7.775 15.6402C3.76451 15.6402 0.5 12.3354 0.5 8.24199C0.5 4.14861 3.76451 0.84375 7.775 0.84375C11.7855 0.84375 15.05 4.14861 15.05 8.24199Z"
+                                            stroke="#616974" />
+                                        <path d="M10.8857 8.24133L6.22074 10.9774L6.22074 5.5053L10.8857 8.24133Z"
+                                            fill="#8994A4" />
+                                    </svg>
+                                </i>
+                                Spot tutorial
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chart-window">
+                        <div class="chart-tables">
+                            <div class="chart-table">
+                                <div class="table-filter">
+                                    <div class="table-type">
+                                        <div class="gr-red current"></div>
+                                        <div class="gr-gr"></div>
+                                        <div class="red-red"></div>
+                                    </div>
+                                    <div>
+                                        <div class="num">0.01</div>
+                                    </div>
+                                </div>
+                                <div class="heading-row">
+                                    <div>Price (USDT)</div>
+                                    <div>Amount (BTC)</div>
+                                    <div>Total</div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="12"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="3"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="1"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="24"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="2"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="100"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="35"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="15"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="21"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="2"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="5"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="12"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="7"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg redline" data-width="75"></div>
+                                    <div class="flex-row">
+                                        <div class="red">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-table">
+                                <div class="table-filter">
+                                    <div class="price-go up">
+                                        <div>32407.61</div>
+                                        <div>
+                                            <svg width="19" height="16" viewBox="0 0 19 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M18.7071 8.70711C19.0976 8.31658 19.0976 7.68342 18.7071 7.29289L12.3431 0.928933C11.9526 0.538409 11.3195 0.538409 10.9289 0.928933C10.5384 1.31946 10.5384 1.95262 10.9289 2.34315L16.5858 8L10.9289 13.6569C10.5384 14.0474 10.5384 14.6805 10.9289 15.0711C11.3195 15.4616 11.9526 15.4616 12.3431 15.0711L18.7071 8.70711ZM-8.74228e-08 9L18 9L18 7L8.74228e-08 7L-8.74228e-08 9Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="button"
+                                            class="more">More<span><span></span><span></span><span></span></span></button>
+                                    </div>
+                                </div>
+                                <div class="heading-row">
+                                    <div>Price (USDT)</div>
+                                    <div>Amount (BTC)</div>
+                                    <div>Total</div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="12"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="3"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="1"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="24"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="2"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="56"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="12"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="34"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="48"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="9"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="7"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="31"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="17"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                                <div class="info-row">
+                                    <div class="bg greenline" data-width="24"></div>
+                                    <div class="flex-row">
+                                        <div class="green">32407.61</div>
+                                        <div>0.080000</div>
+                                        <div>500.1 1516</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-graphic-settings">
+                            <div class="graphic-filter">
+                                <div class="time-mobile">
+                                    <select class="time-select">
+                                        <option value="" selected disabled>Time</option>
+                                        <option value="15m">15m</option>
+                                        <option value="1H">1H</option>
+                                        <option value="4H">4H</option>
+                                        <option value="4H">1D</option>
+                                        <option value="4H">1W</option>
+                                    </select>
+                                </div>
+                                <div class="time">
+                                    <div>Time</div>
+                                    <div class="selector">
+                                        <button type="button">15m</button>
+                                        <button type="button">1H</button>
+                                        <button type="button">4H</button>
+                                        <button type="button" class="current">1D</button>
+                                        <button type="button">1W</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="button" class="filter-button"></button>
+                                </div>
+                                <div class="view-type">
+                                    <button type="button" class="current">Original</button>
+                                    <button type="button">TradingView</button>
+                                    <button type="button">Depth</button>
+                                </div>
+                                <div class="scale-button">
+                                    <button type="button"></button>
+                                </div>
+                            </div>
+                            <div class="graphic">
+                                <img src="assets/img/graphic-img.png" />
+                            </div>
+                            <div class="graphic-settings">
+                                <div class="heading">
+                                    <div class="buttons">
+                                        <div><button class="current" type="button">Limit</button></div>
+                                        <div><button type="button">Market</button></div>
+                                        <div><button type="button">Stop-limit</button></div>
+                                        <div><label class="info" data-info="Example tooltip"></label></div>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="buy-with">Buy with <span>USD</span></button>
+                                    </div>
+                                </div>
+                                <div class="buy-sell-block">
+                                    <div class="buy">
+                                        <div
+                                            class="input-heading d-flex flex-row align-items-center justify-content-between">
+                                            <div>Buy BTC</div>
+                                            <div><span class="graphite2">MAX</span> 1111111 USDT</div>
+                                        </div>
+                                        <div class="input-group-ab" data-before="Price" data-after="USDT">
+                                            <input type="text" value="32396,92">
+                                        </div>
+                                        <div class="input-group-ab" data-before="Amount" data-after="USDT">
+                                            <input type="text" value="" placeholder="10 - 10000">
+                                        </div>
+                                        <div class="line-with-dots">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                        <div class="input-group-ab" data-before="Total" data-after="BTC">
+                                            <input type="text" value="" placeholder="0,0001 - 10">
+                                        </div>
+                                        <button type="button" class="submit">Buy BTC</button>
+                                    </div>
+                                    <div class="sell">
+                                        <div
+                                            class="input-heading d-flex flex-row align-items-center justify-content-between">
+                                            <div>Sell BTC</div>
+                                            <div><span class="graphite2">MAX</span> 1111111 USDT</div>
+                                        </div>
+                                        <div class="input-group-ab" data-before="Price" data-after="USDT">
+                                            <input type="text" value="32396,92">
+                                        </div>
+                                        <div class="input-group-ab" data-before="Amount" data-after="USDT">
+                                            <input type="text" value="" placeholder="10 - 10000">
+                                        </div>
+                                        <div class="line-with-dots disabled">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                        <div class="input-group-ab" data-before="Total" data-after="BTC">
+                                            <input type="text" value="" placeholder="0,0001 - 10">
+                                        </div>
+                                        <button type="button" class="submit">Buy BTC</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selector-menu">
+                        <ul class="nav nav-tabs selector-tabs" id="selectorTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="active" id="activeOrders-tab" data-toggle="tab" href="#activeOrders"
+                                    role="tab" aria-controls="home" aria-selected="true">My active orders</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a id="orderHistory-tab" data-toggle="tab" href="#orderHistory" role="tab"
+                                    aria-controls="profile" aria-selected="false">Order history</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a id="tradeHistory-tab" data-toggle="tab" href="#tradeHistory" role="tab"
+                                    aria-controls="contact" aria-selected="false">Trade history</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a id="funds-tab" data-toggle="tab" href="#funds" role="tab" aria-controls="contact"
+                                    aria-selected="false">Funds</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content selector-tabs-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="activeOrders" role="tabpanel"
+                                aria-labelledby="orderHistory-tab">
+                                <div class="data-table-options d-flex flex-row justify-content-between align-items-end">
+                                    <div class="input-group mb-2 filters">
+                                        <label for="activeOrders">Filters</label>
+                                        <select class="my-custom-select" id="activeOrders">
+                                            <option selected>All</option>
+                                            <option value="Example 1">Example 1</option>
+                                            <option value="Example 2">Example 2</option>
+                                            <option value="Example 3">Example 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="data-table data-table__no_records ten_col">
+                                    <div>
+                                        <div class="heading-row">
+                                            <div>Date</div>
+                                            <div>Pair</div>
+                                            <div>Type</div>
+                                            <div>Side</div>
+                                            <div>Price</div>
+                                            <div>Amount</div>
+                                            <div>Filed</div>
+                                            <div>Total</div>
+                                            <div>Trigger Condition</div>
+                                            <div>Action</div>
+                                        </div>
+                                        <div class="no_found">
+                                            <div class="text">You have no open orders.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="orderHistory" role="tabpanel" aria-labelledby="crypto-tab">
+                                <p>Example</p>
+                            </div>
+                            <div class="tab-pane fade" id="tradeHistory" role="tabpanel"
+                                aria-labelledby="tradeHistory-tab">
+                                <p>Example</p>
+                            </div>
+                            <div class="tab-pane fade" id="funds" role="tabpanel" aria-labelledby="funds-tab">
+                                <p>Example</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buy-sell-mobile">
+                        <button type="button" class="buy">Buy</button>
+                        <button type="button" class="sell">Sell</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="main-footer__menu">
+                        <div>
+                            <div class="heading">About us</div>
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Confidentiality</a></li>
+                                <li><a href="#">Announcements</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="heading">Products</div>
+                            <ul>
+                                <li><a href="#">Exchange</a></li>
+                                <li><a href="#">Trade</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="heading">Service</div>
+                            <ul>
+                                <li><a href="#">Buy cryptocurrency</a></li>
+                                <li><a href="#">Fees</a></li>
+                                <li><a href="#">Trading rules</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="heading">Support</div>
+                            <ul>
+                                <li><a href="#">Leave us a review</a></li>
+                                <li><a href="#">Support Center</a></li>
+                                <li><a href="#">Send request</a></li>
+                                <li><a href="#">Law enforcement inquiries</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="heading">Buy</div>
+                            <ul>
+                                <li><a href="#">Buy Bitcoin</a></li>
+                                <li><a href="#">Buy Ethereum</a></li>
+                                <li><a href="#">Buy Litecoin</a></li>
+                                <li><a href="#">Buy Dogecoin</a></li>
+                                <li><a href="#">Buy USDT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

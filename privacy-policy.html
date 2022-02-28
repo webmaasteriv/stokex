@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Stokex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script defer src="assets/js/popper.min.js"></script>
+    <script defer src="assets/js/bootstrap.min.js"></script>
+    <script defer src="assets/js/bundle.affpage.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container-xl conainer-lg-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="#">stokex</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.5 1.75C3.5 2.21413 3.31563 2.65925 2.98744 2.98744C2.65925 3.31563 2.21413 3.5 1.75 3.5C1.28587 3.5 0.840752 3.31563 0.512563 2.98744C0.184374 2.65925 0 2.21413 0 1.75C0 1.28587 0.184374 0.840752 0.512563 0.512563C0.840752 0.184374 1.28587 0 1.75 0C2.21413 0 2.65925 0.184374 2.98744 0.512563C3.31563 0.840752 3.5 1.28587 3.5 1.75Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M3.5 7C3.5 7.46413 3.31563 7.90925 2.98744 8.23744C2.65925 8.56563 2.21413 8.75 1.75 8.75C1.28587 8.75 0.840752 8.56563 0.512563 8.23744C0.184374 7.90925 0 7.46413 0 7C0 6.53587 0.184374 6.09075 0.512563 5.76256C0.840752 5.43437 1.28587 5.25 1.75 5.25C2.21413 5.25 2.65925 5.43437 2.98744 5.76256C3.31563 6.09075 3.5 6.53587 3.5 7Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M1.75 14C2.21413 14 2.65925 13.8156 2.98744 13.4874C3.31563 13.1592 3.5 12.7141 3.5 12.25C3.5 11.7859 3.31563 11.3408 2.98744 11.0126C2.65925 10.6844 2.21413 10.5 1.75 10.5C1.28587 10.5 0.840752 10.6844 0.512563 11.0126C0.184374 11.3408 0 11.7859 0 12.25C0 12.7141 0.184374 13.1592 0.512563 13.4874C0.840752 13.8156 1.28587 14 1.75 14Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M8.75 1.75C8.75 2.21413 8.56563 2.65925 8.23744 2.98744C7.90925 3.31563 7.46413 3.5 7 3.5C6.53587 3.5 6.09075 3.31563 5.76256 2.98744C5.43437 2.65925 5.25 2.21413 5.25 1.75C5.25 1.28587 5.43437 0.840752 5.76256 0.512563C6.09075 0.184374 6.53587 0 7 0C7.46413 0 7.90925 0.184374 8.23744 0.512563C8.56563 0.840752 8.75 1.28587 8.75 1.75Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M7 8.75C7.46413 8.75 7.90925 8.56563 8.23744 8.23744C8.56563 7.90925 8.75 7.46413 8.75 7C8.75 6.53587 8.56563 6.09075 8.23744 5.76256C7.90925 5.43437 7.46413 5.25 7 5.25C6.53587 5.25 6.09075 5.43437 5.76256 5.76256C5.43437 6.09075 5.25 6.53587 5.25 7C5.25 7.46413 5.43437 7.90925 5.76256 8.23744C6.09075 8.56563 6.53587 8.75 7 8.75Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M8.75 12.25C8.75 12.7141 8.56563 13.1592 8.23744 13.4874C7.90925 13.8156 7.46413 14 7 14C6.53587 14 6.09075 13.8156 5.76256 13.4874C5.43437 13.1592 5.25 12.7141 5.25 12.25C5.25 11.7859 5.43437 11.3408 5.76256 11.0126C6.09075 10.6844 6.53587 10.5 7 10.5C7.46413 10.5 7.90925 10.6844 8.23744 11.0126C8.56563 11.3408 8.75 11.7859 8.75 12.25Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M12.25 3.5C12.7141 3.5 13.1592 3.31563 13.4874 2.98744C13.8156 2.65925 14 2.21413 14 1.75C14 1.28587 13.8156 0.840752 13.4874 0.512563C13.1592 0.184374 12.7141 0 12.25 0C11.7859 0 11.3408 0.184374 11.0126 0.512563C10.6844 0.840752 10.5 1.28587 10.5 1.75C10.5 2.21413 10.6844 2.65925 11.0126 2.98744C11.3408 3.31563 11.7859 3.5 12.25 3.5Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M14 7C14 7.46413 13.8156 7.90925 13.4874 8.23744C13.1592 8.56563 12.7141 8.75 12.25 8.75C11.7859 8.75 11.3408 8.56563 11.0126 8.23744C10.6844 7.90925 10.5 7.46413 10.5 7C10.5 6.53587 10.6844 6.09075 11.0126 5.76256C11.3408 5.43437 11.7859 5.25 12.25 5.25C12.7141 5.25 13.1592 5.43437 13.4874 5.76256C13.8156 6.09075 14 6.53587 14 7Z"
+                                        fill="#D0D9DE" />
+                                    <path
+                                        d="M12.25 14C12.7141 14 13.1592 13.8156 13.4874 13.4874C13.8156 13.1592 14 12.7141 14 12.25C14 11.7859 13.8156 11.3408 13.4874 11.0126C13.1592 10.6844 12.7141 10.5 12.25 10.5C11.7859 10.5 11.3408 10.6844 11.0126 11.0126C10.6844 11.3408 10.5 11.7859 10.5 12.25C10.5 12.7141 10.6844 13.1592 11.0126 13.4874C11.3408 13.8156 11.7859 14 12.25 14Z"
+                                        fill="#D0D9DE" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Markets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Trade</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        Information
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">About Us</a>
+                                        <a class="dropdown-item" href="#">Support Center</a>
+                                        <a class="dropdown-item" href="#">Affiliate Program</a>
+                                        <a class="dropdown-item" href="#">FAQ</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Wallets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Promo<span class="icon-currency">NEW</span></a>
+                                </li>
+                            </ul>
+                            <div class="login-block">
+                                <a class="login" href="#">Log In</a>
+                                <a class="btn stokex-button" href="#">Register</a>
+                                <div class="language-switcher">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+                                                role="button" aria-expanded="false"><span
+                                                    class="lang_icon en"></span>En</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#"><span
+                                                        class="lang_icon ru"></span>Ru</a>
+                                                <a class="dropdown-item" href="#"><span
+                                                        class="lang_icon de"></span>De</a>
+                                                <a class="dropdown-item" href="#"><span
+                                                        class="lang_icon pl"></span>Pl</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4">
+                    <div class="search-form">
+                        <form>
+                            <input type="text" placeholder="Search">
+                            <input type="submit" value="">
+                        </form>
+                    </div>
+                    <div class="divider-line"></div>
+                    <div class="accordion-menu mb-4">
+                        <ul>
+                            <li><a href="#">Program Rules</a></li>
+                            <li><a href="#" class="current">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-8">
+                    <h1><span>Stokex</span> Privacy Policy</h1>
+                    <h2>Last revised: 25 June, 2021</h2>
+                    <p>This Privacy Policy constitutes a part of Binance Terms of Use (the “TOU”). The terms used in
+                        this Privacy Policy shall have the same meanings as in the TOU except as otherwise provided
+                        herein.</p>
+                    <p>This Privacy Policy explains how Binance and Binance Operators collect, use, process, disclose,
+                        share, transfer, and protect personal information obtained through Binance and its partners. The
+                        terms “we,” “us,” and “our” refer to Binance and Binance Operators. When we ask for certain
+                        personal information from users, it is because we are required by applicable laws or government
+                        orders to collect such information or it is relevant for our specified purposes.</p>
+                    <p><strong>Please carefully read the full content of this Privacy Policy. When visiting Binance,
+                            regardless of whether or not you register for or log in the Binance Services, you
+                            acknowledge, understand, and consent to all articles described in this Privacy
+                            Policy.</strong> We will not use your personal information for any purpose not covered in
+                        this Privacy Policy or the TOU (including any other business rules of Binance) without prior
+                        notification to you and your consent.</p>
+                    <p>The latest Privacy Policy has incorporated elements from the General Data Protection Regulation
+                        (GDPR) as we act in accordance with its personal information processing rules within the
+                        European Economic Area (EEA). We utilize standard contract clauses, rely on the European
+                        Commission's adequacy decisions about certain countries, as applicable, and obtain your consent
+                        for these data transfers to third countries if required by applicable laws.</p>
+                    <h2>1. INFORMATION WE COLLECT</h2>
+                    <p><strong>The followings are the types of information we collect when you register for and use
+                            Binance Services:</strong></p>
+                    <h3>1.1 Information You Provide to Us When Registering</h3>
+                    <p>When you create a Binance Account, you provide us with your email address, name, date of birth,
+                        nationality, country code, gender, signature, utility bills, home address, password, and other
+                        information to help us identify you (“Identification Information”). You can also choose to add a
+                        phone number for SMS or Google Authenticator account for Two-Factor Authentication to improve
+                        account security.</p>
+                    <p>If you agree to use biometric authentication methods to log in or use Binance services, such as
+                        fingerprint recognition and facial recognition, you need to provide us with the corresponding
+                        information, such as the fingerprint information and facial information, and your consent to the
+                        processing of your biometric data.</p>
+                    <h3>1.2 Information We Collect to Comply with Regulatory Policies</h3>
+                    <p>To comply with global industry regulatory standards, local industry regulatory standards, and
+                        government orders in different aspects such as Anti-Money Laundering (AML), Know-Your-Client
+                        (KYC), and Counter-Terrorist Financing (CTF), Binance is required to collect personal
+                        information in addition to Identification Information, such as identity documents (including
+                        passport, driver's license, national identity card, state ID card, tax ID number, passport
+                        number, driver's license details, national identity card details, visa information, etc.), proof
+                        of address, source of fund declaration, purposes of fund documents, and source of wealth
+                        (“<strong>Regulation Information</strong>”). We will explain to you the content and requirements
+                        of such personal information each time we collect information and we reserve the right to change
+                        the content and requirements of the collected information as the global industry regulatory
+                        standards, local regulatory standards or government orders change. This provision applies to
+                        both personal and institutional Binance Accounts.</p>
+                    <h3>1.3 Information We Collect as You Use Binance Services</h3>
+                    <h4>a Service Usage Information</h4>
+                    <p>Through your access to and use of Binance Services, we may monitor and collect tracking
+                        information related to usage including but not limited to your phone number, access date and
+                        time, device type and device identification, operating system and hardware setting, browser
+                        type, and information derived from SIM card, network operator, IP address, GPS, base station and
+                        WLAN (“<strong>Service Usage Information</strong>”). This information may be directly obtained
+                        by Binance or through third-party service providers. The collection of Service Usage Information
+                        helps our systems to ensure that our interface is accessible for users across all platforms and
+                        can aid during criminal investigations.</p>
+                    <h4>b Transaction Information</h4>
+                    <p>For all personal and institutional user accounts, we may collect transaction information as you
+                        use Binance Services, including but not limited to deposit snapshots, account balances, trade
+                        history (such as transaction initiation, payment method, price, quantity, time, withdrawal and
+                        authorization information), order activity, and distribution history (“Transaction
+                        Information”). We collect such transaction information to monitor suspicious trading activity
+                        for user fraud protection, legal case resolution, and any other purposes disclosed in this
+                        Privacy Policy.</p>
+                    <h4>c Communication Information</h4>
+                    <p>You agree that, for the purposes disclosed in this Privacy Policy, we are entitled to collect and
+                        use the information contained in or related to the communication that you send to us or
+                        generated through your use of Binance Services (“<strong>Communication Information</strong>”),
+                        which includes:</p>
+                    <p>i) all messages, requests or other information you send in the course of your contact with
+                        Binance;</p>
+                    <p>ii) all communications and file attachments in connection with your transactions with other users
+                        or other data generated primarily through your communications with them.</p>
+                    <h4>d Financial Information:</h4>
+                    <p>You agree that, for the purposes disclosed in this Privacy Policy, we are entitled to collect and
+                        use the information contained in or related to your financial information when you use Binance
+                        Services, including without limitation, bank account information, payment card primary account
+                        number (PAN), transaction history, trading data, and/or tax identification. We collect such
+                        financial information to monitor suspicious financial activity for user fraud protection, legal
+                        case resolution, and any other purposes disclosed in this Privacy Policy.</p>
+                    <h2>2. HOW WE COLLECT INFORMATION</h2>
+                    <h3>2.1 Information Binance Automatically Collects</h3>
+                    <p>Most of the personal information that we collect is directly provided by you. In the following
+                        situations, we will collect and process the information about you:</p>
+                    <p>a. where you register for, log in or visit Binance, or use any service of Binance;</p>
+                    <p>b. where you voluntarily complete any user survey or provide feedback to us via email or any
+                        other channel;</p>
+                    <p>c. where you use cookies of the browser or software in visiting or using our website or APPs;</p>
+                    <p>d. other situations where we may automatically collect your information as mentioned in this
+                        Privacy Policy or our TOU (including the Binance Platform Rules, the same below).</p>
+                    <h3>2.2 Information Collected from the Third-party Sources</h3>
+                    <p>We may collect information about you from third-party sources, including but not limited to, the
+                        following channels:</p>
+                    <p>a. public databases, credit bureaus and ID verification partners;</p>
+                    <p>b. blockchain data;</p>
+                    <p>c. marketing partners and resellers;</p>
+                    <p>d. advertising partners and analytics providers.</p>
+                    <h3>2.3 Anonymized and Aggregated Data</h3>
+                    <p>Anonymization is a data processing technique that removes or modifies personal information so
+                        that it cannot be associated with a specific individual. Except for this section, none of the
+                        other provisions of this Privacy Policy applies to anonymized or aggregated personal data (i.e.
+                        information about our Users that we combine together so that it no longer identifies or
+                        references an individual User).</p>
+                    <p>We may use anonymized or aggregate customer data for any business purpose, including to better
+                        understand Users’ needs and behaviors, improve our products and services, conduct business
+                        intelligence and marketing, and detect security threats. We may perform our own analytics on
+                        anonymized data or enable analytics provided by third parties.</p>
+                    <h2>3. HOW WE USE THE INFORMATION WE COLLECT</h2>
+                    <p>We use the information we collect about you for the following purposes or in the following ways:
+                    </p>
+                    <h3>3.1 To Provide and Maintain Binance Services</h3>
+                    <p>We use the information collected to deliver, maintain and provide better Binance Services
+                        (including but not limited to processing transactions) and verify Users’ identities.</p>
+                    <p>We use the IP address and unique identifiers stored in your device’s cookies to help us
+                        authenticate your identity and activities and provide Binance Services. Given our legal
+                        obligations and system requirements, we cannot provide you with all or some of Binance Services
+                        without data like Identification Information, Supervision Information, Service Usage
+                        Information, Communication Information, and Transaction Information.</p>
+                    <h3>3.2 To Protect Our Users</h3>
+                    <p>We use the information collected to protect our platforms, Users’ accounts, and archives.</p>
+                    <p>We use IP addresses and cookies to protect against automated abuse such as spam, phishing, and
+                        Distributed Denial of Service (DDoS) attacks.</p>
+                    <p>We analyze trading activities with the goal of detecting suspicious behaviors as early as
+                        possible to prevent potential fraud and loss of funds to bad actors.</p>
+                    <h3>3.3 To Comply with Legal and Regulatory Requirements</h3>
+                    <p>With respect to the privacy and security of personal information, we will use the information in
+                        compliance with our legal obligations, government requests, and reasonable user-generated
+                        inquiries. In cases where it is strictly necessary, such as to protect the vital interests of
+                        the Users or other natural persons, to fulfill the purpose of public interest, to pursue our
+                        reasonable interests (but not to damage the interests of the Users), we may process your
+                        personal information without your consent. Except for the situations stated in this Privacy
+                        Policy or the TOU, we will not disclose or provide any of your personal information to third
+                        parties without a review from our legal team and/or prior consent from the User.</p>
+                    <h3>3.4 For Measurement, Research and Development Purposes</h3>
+                    <p>We actively measure and analyze data to understand the way you use and interact with Binance
+                        Services. This review activity is conducted by our operation teams to continually improve our
+                        Platforms’ performance and to resolve issues with the user experience. In addition, we use such
+                        information to customize, measure, and improve Binance Services and the content and layout of
+                        our websites and apps, and to develop new services.</p>
+                    <p>We continuously monitor activity information within our systems and our communications with users
+                        to look for and quickly fix problems.</p>
+                    <h3>3.5 To Communicate with You</h3>
+                    <p>We use personal information collected, like your phone number or email address to interact with
+                        you directly when providing customer support on a ticket or to keep you informed on logins,
+                        transactions, account security and other aspects. Without collecting and processing your
+                        personal information for confirming each communication, we will not be able to respond to your
+                        submitted requests, questions, and inquiries. All direct communications are properly kept at
+                        Binance or the service provider designated by Binance, to be reviewed for accuracy, to be kept
+                        as evidence, or to be used to perform other statutory or contractual obligations.</p>
+                    <h3>3.6 To Enforce Our TOU and Other Agreements</h3>
+                    <p>The collected information is also used to continually and actively enforce our TOU and other
+                        agreements with our Users, including but not limited to reviewing, investigating, and preventing
+                        any potentially prohibited or illegal activities that may violate the foregoing provisions, or
+                        disclose the relevant information to a third party in accordance therewith.</p>
+                    <p>Binance reserves the right to suspend or terminate provision of any Binance Services to any User
+                        found to be engaged in activities that violate our TOU and other agreements with our Users.</p>
+                    <h3>3.7 To Facilitate Corporate Acquisitions, Mergers, or Transactions</h3>
+                    <p>We may process any information regarding your Binance Account and use of Binance Services as is
+                        necessary in the context of corporate acquisitions, mergers, or other corporate transactions.
+                    </p>
+                    <h3>3.8 For Marketing and Advertising</h3>
+                    <p>We may share your personal information with our marketing partners for the purposes of targeting,
+                        modeling, and/or analytics as well as marketing and advertising.</p>
+                    <h3>3.9 For Rebates</h3>
+                    <p>We may share the information collected, including but not limited to your Identification
+                        Information and Transaction Information, with your referrer for the purposes of rebates and
+                        other benefits.</p>
+                    <h3>3.10 For Any Other Purpose</h3>
+                    <p>We may disclose your personal information for any other purpose you consent to.</p>
+                    <h2>4. MARKETING</h2>
+                    <p>If we think you may like specific Binance Services or products and services of our partners, we
+                        hope to keep you informed about such products or services.</p>
+                    <p>If you agree to receive the above marketing information, you can choose to receive it at any time
+                        in the future.</p>
+                    <p>You have the right to ask us at any time to stop contacting you for marketing purposes or to send
+                        relevant information to you. If you do not want to be contacted for marketing purposes in the
+                        future, please click on the unsubscribe link in the bottom of the marketing email and submit
+                        your request to unsubscribe.</p>
+                    <h2>5. HOW WE STORE AND PROTECT USER DATA</h2>
+                    <p>Binance has kept your personal information safe using fault-tolerant secured storage with
+                        industry standard encryption and implemented a number of security measures to ensure that your
+                        information is not lost, abused, or altered, including, but not limited to:</p>
+                    <h3>5.1 Physical Measures</h3>
+                    <p>Materials containing your personal information will be stored in a locked place.</p>
+                    <h3>5.2 Electronic Measures</h3>
+                    <p>Computer data containing your personal information will be stored in the computer systems and
+                        storage media that are subject to strict log-in restrictions.</p>
+                    <h3>5.3 Management Measures</h3>
+                    <p>Only authorized employees are permitted to come into contact with your personal information and
+                        such employees must comply with our internal confidentiality rules for personal data. We have
+                        also imposed strict physical access controls to buildings and files.</p>
+                    <h3>5.4 Technical Measures</h3>
+                    <p>Encryption technology such as PCI Scanning and Secured Sockets Layered Encryption may be used to
+                        transmit and store your personal information. We use various currently available general
+                        security technologies and supporting management systems to minimize the risks that your
+                        information may be disclosed, damaged, misused, accessed without authorization, disclosed
+                        without authorization, or altered.</p>
+                    <h3>5.5 Other Measures</h3>
+                    <p>Our web server is protected by the “firewall”.</p>
+                    <p>Please note that it is impossible to guarantee 100% security of information. As such, we request
+                        that you understand the responsibility to independently take safety precautions to protect your
+                        own personal information.You agree that we shall not be liable for any information leakage and
+                        other losses not caused by our intention or gross negligence, including but not limited to
+                        hacker attack, power interruption, or unavoidable technical failure, to the maximum extent
+                        permitted by law.</p>
+                    <p>If you suspect that your personal information has been compromised, especially account and/or
+                        password information, please lock your Binance Account and immediately contact Binance Customer
+                        Support team at <a
+                            href="https://www.binance.com/en/privacy/en/support/requests/new">https://www.binance.com/en/privacy/en/support/requests/new</a>.
+                    </p>
+                    <p>Unless otherwise stipulated by law or the TOU, you agree that we have the right but not the
+                        obligation to retain all the collected personal information for the duration of your Binance
+                        Account for 5 more years after the account is closed.</p>
+                    <h2>6. TRANSFERS OF PERSONAL INFORMATION</h2>
+                    <p>You understand that we have the right to have all or some of the collected personal information
+                        transferred to or stored in other countries or regions than your country of nationality, your
+                        country of residence, or the country where the server is, without your specific consent, under
+                        the following circumstances:</p>
+                    <p>6.1 if it is necessary to protect, process, analyze, reasonably use the personal information;</p>
+                    <p>6.2 if it is necessary to enforce the TOU and other agreements with our Users;</p>
+                    <p>6.3 if it is necessary for the public interest;</p>
+                    <p>6.4 if it is necessary to establish, exercise or defend the rights of us, our partners, or other
+                        Users;</p>
+                    <p>6.5 other circumstances required by law or government orders.</p>
+                    <h2>7. COOKIES</h2>
+                    <h3>7.1 What Are Cookies?</h3>
+                    <p>Cookies are small amounts of data that are sent to your browser and stored on your computer’s
+                        hard drive to collect standard internet log information and visitor behavior information. When
+                        you visit Binance, we can automatically collect information from you through cookies or similar
+                        technologies.</p>
+                    <p>For more information, please visit: <a
+                            href="http://www.allaboutcookies.org">www.allaboutcookies.org</a></p>
+                    <h3>7.2 How Do We Use Cookies?</h3>
+                    <p>We use cookies in a range of ways to make your experience on our Platforms more enjoyable,
+                        including but not limited to:</p>
+                    <p>a. to keep you signed in;</p>
+                    <p>b. to record your habits and preferences when browsing Binance;</p>
+                    <p>c. to record our performance and verify the effectiveness of online advertising through Google
+                        Stats with cookies.</p>
+                    <h3>7.3 What Types of Cookies Do We Use?</h3>
+                    <p>We use different types of cookies, including but not limited to:</p>
+                    <h4>a. Functional Cookies</h4>
+                    <p>We use such cookies to help us identify you and remember your previous preferences and settings,
+                        which may include your device, your operating system, your preferred language, your location,
+                        and other session data. We use a mix of first-party and third-party cookies.</p>
+                    <h4>b. Marketing Cookies</h4>
+                    <p>We use these cookies to collect information about your visit to Binance, the content you view,
+                        the links you follow, and other information about your browsers, devices, your IP addresses and
+                        referral URLs. We sometimes share certain parts of the collected information with third parties
+                        for marketing purposes. We may also share online data collected through cookies with our
+                        marketing partners. This means that when you visit another website, you may also be shown
+                        advertisements based on your browsing patterns on Binance.</p>
+                    <h3>7.4 How to Manage Cookies?</h3>
+                    <p>Most browsers are preset to accept cookies. You can adjust your browser setting to prevent
+                        cookies or to notify you as soon as cookies are loaded. However, stopping all cookies might mean
+                        that you cannot access or use some features of the Binance.</p>
+                    <h2>8. DATA PROTECTION RIGHTS THAT YOU ENJOY</h2>
+                    <p>We hope to ensure that you are fully aware of the data protection rights that you enjoy. Unless
+                        otherwise required by law or government orders, each User has the following rights:</p>
+                    <h3>8.1 Right of Access</h3>
+                    <p>You have the right to access or obtain copies of your personal information. We may charge a
+                        reasonable fee for providing the access service.</p>
+                    <h3>8.2 Right to Rectification</h3>
+                    <p>You have the right to correct your personal information that you deem inaccurate. You also have
+                        the right to ask us to complete the personal information that you deem incomplete within a
+                        reasonable limit.</p>
+                    <h3>8.3 Right to Erasure (Right to be Forgotten)</h3>
+                    <p>You have the right to request the erasure of your personal data under certain circumstances.</p>
+                    <h3>8.4 Right to Restriction of Processing</h3>
+                    <p>Under certain circumstances as required by law or as specifically reminded by us, you have the
+                        right to request us to restrict the processing of your personal information; however, you
+                        understand that such restriction of the processing may prevent us from providing you with some
+                        of Binance Services.</p>
+                    <h3>8.5 Right to Object</h3>
+                    <p>Under certain circumstances as required by Law or as specifically reminded by us, you have the
+                        right to object to the processing of your personal information; however, you understand that
+                        such objection of the processing may prevent us from providing you with some of Binance
+                        Services.</p>
+                    <h3>8.6 Right to Data Portability</h3>
+                    <p>Under certain circumstances as required by Law or as specifically reminded by us, you have the
+                        right to request us to transmit the personal information that we collect to another body, or
+                        directly to you. We may charge a reasonable fee for providing the transmission service.</p>
+                    <h2>9. PRIVACY POLICIES OF OTHER WEBSITES</h2>
+                    <h3>9.1 Privacy Policies of Non-Binance Websites</h3>
+                    <p>If you visit other third-party platforms or partner’s websites, apps via the links on Binance,
+                        you should agree with and abide by their separate and independent privacy policies. We are not
+                        responsible for the content or the activities therein.</p>
+                    <h3>9.2 Privacy Policies of Binance</h3>
+                    <p>This Privacy Policy applies to all platforms, websites, and departments of Binance.com and
+                        Binance ecosystem. If you visit any link to any sub-platforms of Binance, you should agree with
+                        and abide by the separate and independent privacy policies of such sub-platforms. If the privacy
+                        policy of any sub-platform conflicts with this Privacy Policy, the privacy policy of such
+                        sub-platform shall prevail.</p>
+                    <h2>10. CHANGES TO THIS PRIVACY POLICY</h2>
+                    <p>From time to time, Binance may revise this Privacy Policy to reflect changes in Law or our
+                        personal-data collection, processing, and use practices. Changes to this Privacy Policy will be
+                        announced by posting on the <a
+                            href="https://www.binance.com/en/privacy/en/privacy">https://www.binance.com/en/privacy/en/privacy</a>.
+                        You shall regularly review the Privacy Policy and pay attention to its revisions. If you do not
+                        agree with the revised content, you shall stop accessing Binance immediately. When an updated
+                        version of the Privacy Policy is released, your continued access to Binance means that you agree
+                        to the updated content and agree to abide by the updated Privacy Policy.</p>
+                    <h2>11. CONTACT US</h2>
+                    <p>We are committed to respecting the freedoms and rights of all our Binance Users. Should have any
+                        questions or concerns regarding this Privacy Policy, or if you would like to file a data
+                        protection request, please refer to our Frequently Asked Questions at <a
+                            href="https://www.binance.com/en/privacy/en/support/faq">https://www.binance.com/en/privacy/en/support/faq</a>
+                        and contact us on our Support Page at <a
+                            href="https://www.binance.com/en/privacy/en/support">https://www.binance.com/en/privacy/en/support</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="main-footer__menu">
+                        <div>
+                            <div class="heading">About us</div>
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Confidentiality</a></li>
+                                <li><a href="#">Announcements</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="heading">Products</div>
+                            <ul>
+                                <li><a href="#">Exchange</a></li>
+                                <li><a href="#">Trade</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="heading">Service</div>
+                            <ul>
+                                <li><a href="#">Buy cryptocurrency</a></li>
+                                <li><a href="#">Fees</a></li>
+                                <li><a href="#">Trading rules</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="heading">Support</div>
+                            <ul>
+                                <li><a href="#">Leave us a review</a></li>
+                                <li><a href="#">Support Center</a></li>
+                                <li><a href="#">Send request</a></li>
+                                <li><a href="#">Law enforcement inquiries</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="heading">Buy</div>
+                            <ul>
+                                <li><a href="#">Buy Bitcoin</a></li>
+                                <li><a href="#">Buy Ethereum</a></li>
+                                <li><a href="#">Buy Litecoin</a></li>
+                                <li><a href="#">Buy Dogecoin</a></li>
+                                <li><a href="#">Buy USDT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
